@@ -130,10 +130,14 @@ REST API는 프론트(React 등등) 에 먼저 접속하고 필요시에만 필�
    ```
 
    esc -> : wq
-   중요! try_files 설정은 일종의 nginx 자체의 라우팅 설정이다. 보통 이 부분에서 특정 패턴의 url에 특정 파일등을 redirect하는 설정을 한다. 만약 페이지를 못 찾을 경우 404 not found 설정도 이곳에서 한다.
+   중요! try_files 설정은 일종의 nginx 자체의 라우팅 설정이다. 
+   보통 이 부분에서 특정 패턴의 url에 특정 파일등을 redirect하는 설정을 한다. 만약 페이지를 못 찾을 경우 404 not found 설정도 이곳에서 한다.
    하지만 react 프로젝트인 경우, 웹서버에서 먼저 리퀘스트 url을 가로채면 react-router의 기능을 사용할 수 없게 된다. 따라서 위처럼 모든 request를 index.html로 곧장 가게 설정 해줘야 한다.
+   
    [심볼릭] sudo ln -s /etc/nginx/sites-available/myapp.conf /etc/nginx/sites-enabled/myapp.conf
+   
    [nginx 재시작] sudo systemctl stop nginx
+   
    [nginx 재시작] sudo systemctl start nginx
 
    cd /home 으로 이동 후 mkdir test 로 폴더를 만든 후 cd test/ 그 안에 mkdir build 로 build 폴더를 만든 후 cd build
@@ -149,11 +153,17 @@ REST API는 프론트(React 등등) 에 먼저 접속하고 필요시에만 필�
    sudo apt-get install nodejs <- 아래 NVM이 안될 경우 ㅎㅎ;;
 
    -------- NODE 버전 관리를 위해 사용 & 필요한 노드 버전 설치 --------
+   
    sudo apt-get install -y curl
+   
    sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+   
    export NVM_DIR="$HOME/.nvm"
+   
    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+   
    [ -s "$NVM_DIR/bash_completion" ] && . "\$NVM_DIR/bash_completion"
+   
    nvm ls-remote
 
    nvm install 12.18.3

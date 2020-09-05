@@ -87,20 +87,28 @@ REST API는 프론트(React 등등) 에 먼저 접속하고 필요시에만 필�
 ## 3. 서버 설정
 
 1. git을 설치한다.
+
    [깃 설치 ] sudo apt-get install git
 
 2. nginx 설치
+
    [nginx 설치] sudo apt install nginx
 
    nginx는 설치시 etc 아래 nginx가 있다.
    그후 백업을 한다.
 
    [백업1] sudo cp -r /etc/nginx/sites-available/ /etc/nginx/sites-available-origin
+   
    [백업2] sudo cp -r /etc/nginx/sites-enabled/ /etc/nginx/sites-enabled-origin
+   
    [기존 내용 삭제] sudo rm /etc/nginx/sites-available/default
+   
    [기존 내용 삭제2] sudo rm /etc/nginx/sites-enabled/default
+   
    [sites-available 내 설정 파일 생성 1] cd /etc/nginx/sites-available
+   
    [sites-available 내 설정 파일 생성 2] sudo touch myapp.conf
+   
 
    그후 [생성파일 편집] vim myapp.conf
 

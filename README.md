@@ -1,4 +1,4 @@
-# React-Node.js-Deploy 리엑트(React) Node.js 서비스 배포
+# React-Node.js-Deploy 리액트(React) Node.js 서비스 배포
 
 브라우저에서 Web Server(nginx)를 통해서 요청해서 Web Server는 Static File에서 요청에 대한 응답 가져와 다시 브라우저에 응답한다.
 
